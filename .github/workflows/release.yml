@@ -1,9 +1,12 @@
 name: Release
 
+# Publishes a GitHub release (and its v* tag) whenever main has a manifest
+# version that hasn't been released yet. Bump the version to ship an update.
 on:
   push:
-    tags:
-      - "v*"
+    branches:
+      - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,15 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check tag matches manifest version
-        run: |
-          manifest_version=$(jq -r .version custom_components/episode_amp/manifest.json)
-          if [ "v${manifest_version}" != "${GITHUB_REF_NAME}" ]; then
-            echo "Tag ${GITHUB_REF_NAME} does not match manifest version ${manifest_version}"
-            exit 1
-          fi
-
-      - name: Create GitHub release
+      - name: Create release if version is new
         env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "${GITHUB_REF_NAME}" --title "${GITHUB_REF_NAME}" --generate-notes
+        run: |
+          tag="v$(jq -r .version custom_components/episode_amp/manifest.json)"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            echo "$tag already released, nothing to do"
+            exit 0
+          fi
+          gh release create "$tag" --target "$GITHUB_SHA" --title "$tag" --generate-notes

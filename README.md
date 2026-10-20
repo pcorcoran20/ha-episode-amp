@@ -69,7 +69,7 @@ logger:
 
 ## Releasing
 
-Bump `version` in `custom_components/episode_amp/manifest.json`, commit, then
-push a matching tag (`git tag v1.0.1 && git push origin v1.0.1`). The Release
-workflow checks the tag matches the manifest and publishes a GitHub release,
-which is what HACS offers as an update.
+Bump `version` in `custom_components/episode_amp/manifest.json` (and add a
+`CHANGELOG.md` entry), then push to `main`. The Release workflow sees the new
+version, creates the matching `v*` tag and publishes a GitHub release, which is
+what HACS offers as an update.
