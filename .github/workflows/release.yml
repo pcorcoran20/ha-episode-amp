@@ -1,3 +1,23 @@
+#     ╭──────────────────────────────────────────────────────╮
+#     │                                                      │
+#     │          __                                          │
+#     │        <(o )___           ✦ EVEREST SMART HOMES ✦    │
+#     │         ( ._> /           quack-powered code         │
+#     │          `---'            handcrafted by Patrick     │
+#     │      __       __       __                            │
+#     │    <(o )__  <(o )__  <(o )__    (the interns)        │
+#     │     (._>/    (._>/    (._>/                          │
+#     │  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  │
+#     │                                                      │
+#     │   file     : release.yml                             │
+#     │   project  : Episode Response Amp – HA integration   │
+#     │   author   : Patrick · Everest Smart Homes LLC       │
+#     │   created  : 2026-10-20                              │
+#     │   license  : MIT (Muscovy Integrity Treaty)          │
+#     │   status   : no ducks were harmed, all were fed      │
+#     │                                                      │
+#     ╰──────────────────────────────────────────────────────╯
+
 name: Release
 
 # Publishes a GitHub release (and its v* tag) whenever main has a manifest

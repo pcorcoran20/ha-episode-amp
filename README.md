@@ -1,7 +1,6 @@
 # Episode Response Amp — Home Assistant integration
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Custom-41BDF5.svg)](https://hacs.xyz/docs/faq/custom_repositories)
-[![Validate](https://github.com/pcorcoran20/ha-episode-amp/actions/workflows/validate.yml/badge.svg)](https://github.com/pcorcoran20/ha-episode-amp/actions/workflows/validate.yml)
 [![Release](https://img.shields.io/github/v/release/pcorcoran20/ha-episode-amp)](https://github.com/pcorcoran20/ha-episode-amp/releases)
 
 Local, push-based control of Snap One **Episode Response Series** amplifiers
@@ -66,10 +65,3 @@ logger:
   logs:
     custom_components.episode_amp: debug
 ```
-
-## Releasing
-
-Bump `version` in `custom_components/episode_amp/manifest.json` (and add a
-`CHANGELOG.md` entry), then push to `main`. The Release workflow sees the new
-version, creates the matching `v*` tag and publishes a GitHub release, which is
-what HACS offers as an update.
